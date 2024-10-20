@@ -37,7 +37,7 @@ export const DocumentProvider: FC<PropsWithChildren> = ({ children }) => {
 
       const document = await fileToBase64(file);
 
-      complete("", { body: { fromLanguage, toLanguage, document, apiKey } });
+      complete("", { body: { fromLanguage, toLanguage, document } });
     }
 
     run();
