@@ -72,7 +72,7 @@ export async function POST(req: Request) {
   // Servicio para la traducción
   const openai = createOpenAI({
     compatibility: "strict",
-    apiKey,
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   const model = openai("gpt-4o");

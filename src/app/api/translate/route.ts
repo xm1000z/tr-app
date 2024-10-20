@@ -9,7 +9,7 @@ const RequestSchema = z.object({
   prompt: z.string(),
   fromLanguage: z.string(),
   toLanguage: z.string(),
-  apiKey: z.string(),
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function POST(req: Request) {

@@ -24,10 +24,17 @@ export const SetupDialog = () => {
   const [value, setValue] = useState(apiKey ?? "");
 
   // Save apiKey to localStorage
-  const handleSaveApiKey = (event: FormEvent<HTMLFormElement>) => {
+  const handleSaveApiKey = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    setApiKey(value);
+    const trimmedValue = value.trim();
+    if (trimmedValue) {
+      setApiKey(trimmedValue);
+    } else {
+      const response = await fetch('/api/get-default-api-key');
+      const { defaultApiKey } = await response.json();
+      setApiKey(defaultApiKey || '');
+    }
 
     handleCloseSetupDialog();
   };

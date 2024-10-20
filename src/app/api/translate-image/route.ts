@@ -10,7 +10,7 @@ const RequestSchema = z.object({
   fromLanguage: z.string(),
   toLanguage: z.string(),
   image: z.string(),
-  apiKey: z.string(),
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function POST(req: Request) {
