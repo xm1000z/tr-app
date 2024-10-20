@@ -40,7 +40,7 @@ export const ImageDropzoneBox = () => {
         </>
       ) : (
         <Dropzone
-          title="Drag and drop an image here, or click to select an image"
+          title="Arrastra y suelta una imagen aquí, o haz clic para seleccionar una imagen"
           accept={{ "image/*": [] }}
           onDrop={onDrop}
         />

@@ -36,7 +36,7 @@ export const DocumentDropzoneBox = () => {
         </div>
       ) : (
         <Dropzone
-          title="Drag and drop a pdf file here, or click to select a pdf file"
+          title="Arrastra y suelta un archivo PDF aquí, o haz clic para seleccionar un archivo PDF"
           accept={{ "application/pdf": [] }}
           onDrop={onDrop}
         />

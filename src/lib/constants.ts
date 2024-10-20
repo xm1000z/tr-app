@@ -14,8 +14,8 @@ export const validToolBeltTypes = [
   ToolBeltType.WEB_SITE,
 ];
 
-export const DEFAULT_FROM_QUERY_LANGUAGE = "en";
-export const DEFAULT_TO_QUERY_LANGUAGE = "es";
+export const DEFAULT_FROM_QUERY_LANGUAGE = "es";
+export const DEFAULT_TO_QUERY_LANGUAGE = "en";
 
 interface Language {
   value: string;
@@ -25,17 +25,17 @@ interface Language {
 }
 
 export const languages: Language[] = [
-  { value: "Spanish", label: "Español", lang: "es-ES", query: "es" },
-  { value: "English", label: "English", lang: "en-US", query: "en" },
-  { value: "German", label: "German", lang: "de-DE", query: "de" },
-  { value: "Arabic", label: "Arabic", lang: "ar-SA", query: "ar" },
-  { value: "Bengali", label: "Bengali", lang: "bn-IN", query: "bn" },
-  { value: "French", label: "French", lang: "fr-FR", query: "fr" },
+  { value: "Español", label: "Español", lang: "es-ES", query: "es" },
+  { value: "Inglés", label: "Inglés", lang: "en-US", query: "en" },
+  { value: "Alemán", label: "Alemán", lang: "de-DE", query: "de" },
+  { value: "Árabe", label: "Árabe", lang: "ar-SA", query: "ar" },
+  { value: "Bengalí", label: "Bengalí", lang: "bn-IN", query: "bn" },
+  { value: "Francés", label: "Francés", lang: "fr-FR", query: "fr" },
   { value: "Hindi", label: "Hindi", lang: "hi-IN", query: "hi" },
-  { value: "Japanese", label: "Japanese", lang: "ja-JP", query: "ja" },
-  { value: "Mandarin", label: "Mandarin", lang: "zh-CN", query: "zh" },
-  { value: "Portuguese", label: "Portuguese", lang: "pt-BR", query: "pt" },
-  { value: "Russian", label: "Russian", lang: "ru-RU", query: "ru" },
+  { value: "Japonés", label: "Japonés", lang: "ja-JP", query: "ja" },
+  { value: "Mandarín", label: "Mandarín", lang: "zh-CN", query: "zh" },
+  { value: "Portugués", label: "Portugués", lang: "pt-BR", query: "pt" },
+  { value: "Ruso", label: "Ruso", lang: "ru-RU", query: "ru" },
 ];
 
 export const querylanguages: string[] = languages.map(({ query }) => query);
