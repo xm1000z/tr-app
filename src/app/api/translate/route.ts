@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   }
 
   // Controller for the translation
-  const { fromLanguage, toLanguage, prompt, apiKey } = data;
+  const { fromLanguage, toLanguage, prompt } = data;
 
   const openai = createOpenAI({
     compatibility: "strict",
