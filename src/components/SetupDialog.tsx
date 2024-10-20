@@ -23,11 +23,12 @@ export const SetupDialog = () => {
   const [showApiKey, setShowApiKey] = useState(false);
   const [value, setValue] = useState(apiKey ?? "");
 
-  // Save apiKey to localStorage
+  // Save apiKey to localStorage or use environment variable
   const handleSaveApiKey = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    setApiKey(value);
+    const keyToUse = value.trim() || process.env.OPENAI_API_KEY || "";
+    setApiKey(keyToUse);
 
     handleCloseSetupDialog();
   };
@@ -46,32 +47,22 @@ export const SetupDialog = () => {
       <DialogContent className="sm:max-w-[425px]">
         <form className="flex flex-col gap-4" onSubmit={handleSaveApiKey}>
           <DialogHeader>
-            <DialogTitle>Setup Api Key</DialogTitle>
+            <DialogTitle>Configurar Clave API</DialogTitle>
             <DialogDescription>
-              Enter your{" "}
+              Ingresa tu{" "}
               <a
                 className="underline font-bold"
                 target="_blank"
                 rel="noreferrer"
                 href="https://platform.openai.com/account/api-keys"
               >
-                API key
+                clave API
               </a>{" "}
-              to start using the app. Your key is not stored. You can verify
-              this in the{" "}
-              <a
-                className="underline font-bold"
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/developaul/translate-app"
-              >
-                open-source code
-              </a>
-              .
+              para comenzar a usar la aplicación. Tu clave no se almacena.
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="apiKey">Api Key</Label>
+            <Label htmlFor="apiKey">Clave API</Label>
             <div className="flex gap-1">
               <Input
                 value={value}
@@ -93,7 +84,7 @@ export const SetupDialog = () => {
           </div>
           <DialogFooter className="w-full">
             <Button className="w-full" type="submit">
-              Save changes
+              Guardar cambios
             </Button>
           </DialogFooter>
         </form>

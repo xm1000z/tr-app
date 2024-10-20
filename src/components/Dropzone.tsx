@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { FC } from "react";
+import { Upload } from "@radix-ui/react-icons"
 import { Accept, useDropzone } from "react-dropzone";
 
 interface DropzoneProps {
@@ -24,7 +25,7 @@ export const Dropzone: FC<DropzoneProps> = ({ title, accept, onDrop }) => {
         })}
       >
         <input {...getInputProps()} />
-        <Image
+        <Upload
           src={"/drag_and_drop.webp"}
           loading='lazy'
           alt="drag and drop"
