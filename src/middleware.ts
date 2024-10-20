@@ -1,17 +1,15 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
-import createIntlMiddleware from 'next-intl/middleware';
+import type { NextRequest } from 'next/server';
+import { auth } from '@clerk/nextjs';
 
-const isPublicRoute = createRouteMatcher(['/sign-in(.*)']);
-const isApiRoute = createRouteMatcher(['/api/chat(.*)', '/api/search(.*)', '/api/app(.*)']);
+// Función para verificar si la ruta es pública
+function isPublicRoute(path: string) {
+  const publicRoutes = ['/sign-in', '/sign-up', '/api/public'];
+  return publicRoutes.some(route => path.startsWith(route));
+}
 
-export default clerkMiddleware((auth, req) => {
-  if (isApiRoute(req)) {
-    // Permite que las rutas API se procesen sin interferencia del middleware de Clerk
-    return NextResponse.next();
-  }
-
-  if (!isPublicRoute(req)) {
+export function middleware(req: NextRequest) {
+  if (!isPublicRoute(req.nextUrl.pathname)) {
     const { userId } = auth();
     if (!userId) {
       const signInUrl = new URL('https://app.notas.ai/sign-in', req.url);
@@ -19,16 +17,10 @@ export default clerkMiddleware((auth, req) => {
       return NextResponse.redirect(signInUrl);
     }
   }
-
-  return intlMiddleware(req);
-});
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: [
-    '/((?!.*\\..*|_next).*)',
-    '/',
-    '/(api|trpc)(.*)', // Esto manejará las rutas /api/ y /trpc/
-    // Asegúrate de que las rutas de API específicas también estén incluidas
-    '/api/:path*',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };
+
