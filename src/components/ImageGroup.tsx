@@ -9,7 +9,7 @@ export const ImageGroup = () => {
   const { completion } = useContext(imageContext);
 
   return (
-    <div className="flex flex-col md:flex-row md:gap-14">
+    <div className="mt-4 md:mt-6 flex flex-col md:flex-row md:gap-14">
       <ImageDropzoneBox />
 
       <TranslationBox
