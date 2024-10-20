@@ -5,7 +5,6 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
 import {
   ThemeProvider,
   TextProvider,
@@ -41,7 +40,6 @@ export default function RootLayout({
   return (
     <ClerkProvider 
     appearance={{
-        baseTheme: dark,
         elements: {
           footer: "hidden",
         },
