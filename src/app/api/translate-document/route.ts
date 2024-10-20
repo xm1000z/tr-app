@@ -33,10 +33,10 @@ export async function POST(req: Request) {
   }
 
   // Controlador para la traducción
-  const { fromLanguage, toLanguage, image } = data;
+  const { fromLanguage, toLanguage, document } = data;
 
   const matchedPrefix = validPrefixes.find((prefix) =>
-    image.startsWith(prefix)
+    document.startsWith(prefix)
   );
   
   if (!matchedPrefix) {
