@@ -35,11 +35,11 @@ export const ImageProvider: FC<PropsWithChildren> = ({ children }) => {
     async function run() {
       if (file === null) return;
       const image = await fileToBase64(file);
-      complete("", { body: { fromLanguage, toLanguage, image, apiKey } });
+      complete("", { body: { fromLanguage, toLanguage, image } });
     }
 
     run();
-  }, [complete, file, fromLanguage, toLanguage, apiKey]);
+  }, [complete, file, fromLanguage, toLanguage]);
 
   useEffect(() => {
     if (!error) return;
