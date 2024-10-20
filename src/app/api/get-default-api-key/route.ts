@@ -1,7 +1,6 @@
 // pages/api/get-default-api-key.ts
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json({ defaultApiKey: process.env.OPENAI_API_KEY || '' });
+export async function GET() {
+  return NextResponse.json({ defaultApiKey: process.env.OPENAI_API_KEY || '' });
 }
-
