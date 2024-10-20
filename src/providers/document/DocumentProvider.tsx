@@ -37,11 +37,11 @@ export const DocumentProvider: FC<PropsWithChildren> = ({ children }) => {
 
       const document = await fileToBase64(file);
 
-      complete("", { body: { fromLanguage, toLanguage, document } });
+      complete("", { body: { fromLanguage, toLanguage, document, apiKey } });
     }
 
     run();
-  }, [complete, file, fromLanguage, toLanguage, apiKey]);
+  }, [complete, file, fromLanguage, toLanguage]);
 
   useEffect(() => {
     if (!error) return;
