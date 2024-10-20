@@ -30,6 +30,25 @@ export const metadata: Metadata = {
   keywords:
     "traducir, traductor, traducción, texto, imagen, documento, pdf, ai, openai, gpt, chatgpt, vercel, nextjs, tailwindcss, shadcn, radix, react, typescript, bun, pdf-parse",
   metadataBase: new URL("https://traductor.notas.ai"),
+  openGraph: {
+    type: "website",
+    url: "https://traductor.notas.ai",
+    title: "Traductor - NotasAI",
+    description: "Traduce tu texto, imágenes y documentos en múltiples idiomas",
+    siteName: "Traductor NotasAI",
+    images: [
+      {
+        url: "https://notas.ai/ab.jpeg", // Asegúrate de tener esta imagen en tu carpeta public
+        width: 1200,
+        height: 630,
+        alt: "Traductor NotasAI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@notas_ia", // Reemplaza con tu usuario de Twitter si lo tienes
+  },
 };
 
 export default function RootLayout({
