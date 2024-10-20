@@ -14,7 +14,6 @@ const RequestSchema = z.object({
   fromLanguage: z.string(),
   toLanguage: z.string(),
   document: z.string(),
-  apiKey: z.string(),
 });
 
 export async function POST(req: Request) {
@@ -34,10 +33,10 @@ export async function POST(req: Request) {
   }
 
   // Controlador para la traducción
-  const { fromLanguage, toLanguage, document, apiKey } = data;
+  const { fromLanguage, toLanguage, image } = data;
 
   const matchedPrefix = validPrefixes.find((prefix) =>
-    document.startsWith(prefix)
+    image.startsWith(prefix)
   );
   
   if (!matchedPrefix) {

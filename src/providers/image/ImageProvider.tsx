@@ -16,7 +16,6 @@ export const ImageProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const { fromLanguage, toLanguage } = useContext(languageContext);
 
-  const { apiKey } = useContext(setupContext);
 
   const { completion, complete, isLoading, setCompletion, error } =
     useCompletion({

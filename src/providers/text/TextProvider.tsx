@@ -30,7 +30,6 @@ export const TextProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const { fromLanguage, toLanguage } = useContext(languageContext);
 
-  const { apiKey } = useContext(setupContext);
 
   const { completion, complete, setCompletion, error } = useCompletion({
     api: "/api/translate",

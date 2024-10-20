@@ -10,7 +10,6 @@ const RequestSchema = z.object({
   fromLanguage: z.string(),
   toLanguage: z.string(),
   image: z.string(),
-  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function POST(req: Request) {
@@ -31,13 +30,13 @@ export async function POST(req: Request) {
   }
 
   // Controlador para la traducción
-  const { fromLanguage, toLanguage, image, apiKey } = data;
+  const { fromLanguage, toLanguage, image } = data;
 
   const formattedImage = base64ToUint8Array(image);
 
   const openai = createOpenAI({
     compatibility: "strict",
-    apiKey,
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   const model = openai("gpt-4o");
