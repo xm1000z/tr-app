@@ -42,8 +42,8 @@ export const SpeechSynthesisProvider: FC<PropsWithChildren> = ({
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem speaking the text.",
+        title: "¡Ups! Algo salió mal.",
+        description: "Hubo un problema al detectar.",
       });
     }
   };
@@ -68,8 +68,8 @@ export const SpeechSynthesisProvider: FC<PropsWithChildren> = ({
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem stopping the speech.",
+        title: "¡Ups! Algo salió mal.",
+        description: "Hubo un problema al detener el habla.",
       });
     } finally {
       setSpeakingState((prev) => ({ ...prev, isSpeaking: false }));

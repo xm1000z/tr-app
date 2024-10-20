@@ -15,11 +15,11 @@ export const ErrorProvider: FC<PropsWithChildren> = ({ children }) => {
 
     toast({
       variant: "destructive",
-      title: "Uh oh! Something went wrong.",
+      title: "¡Ups! Algo salió mal.",
       description: message,
       action: (
         <ToastAction onClick={handleOpenSetupDialog} altText="Try again">
-          Configure
+          Configurar
         </ToastAction>
       ),
     });
