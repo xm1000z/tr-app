@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Traductor NotasAI",
     images: [
       {
-        url: "https://notas.ai/ab.jpeg", // Asegúrate de tener esta imagen en tu carpeta public
+        url: "https://notas.ai/ab.jpeg",
         width: 1200,
         height: 630,
         alt: "Traductor NotasAI",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@notas_ia", // Reemplaza con tu usuario de Twitter si lo tienes
+    site: "@notas_ia",
   },
 };
 
