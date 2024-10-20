@@ -6,7 +6,7 @@ import pdf from "pdf-parse";
 import { validPrefixes } from "@/lib/constants";
 
 
-// Allow streaming responses up to 30 seconds
+// Permitir respuestas en streaming de hasta 30 segundos
 export const maxDuration = 30;
 
 
@@ -18,7 +18,7 @@ const RequestSchema = z.object({
 });
 
 export async function POST(req: Request) {
-  // Validate the request body
+  // Validar el cuerpo de la solicitud
   const body = await req.json();
   const { success: successSchema, data, error } = RequestSchema.safeParse(body);
 
@@ -26,14 +26,14 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "Invalid request body.",
+        message: "Cuerpo de la solicitud inválido.",
         data: error.format(),
       },
       { status: 400 }
     );
   }
 
-  // Controller for the translation
+  // Controlador para la traducción
   const { fromLanguage, toLanguage, document, apiKey } = data;
 
   const matchedPrefix = validPrefixes.find((prefix) =>
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "The Data URI format is invalid",
+        message: "El formato de Data URI es inválido",
       },
       { status: 401 }
     );
@@ -63,13 +63,13 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "Error parsing the PDF document",
+        message: "Error al analizar el documento PDF",
       },
       { status: 500 }
     );
   }
 
-  // Service for the translation
+  // Servicio para la traducción
   const openai = createOpenAI({
     compatibility: "strict",
     apiKey,
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
   try {
     const result = await streamText({
       model,
-      system: `Translate the following text from ${fromLanguage} to ${toLanguage}. If "Auto" is the from language, then try to detect the original language automatically after reading the text. Return directly the translated text. Do not include the prompt in the response.`,
+      system: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Si el idioma de origen es "Auto", intenta detectar el idioma original automáticamente después de leer el texto. Devuelve directamente el texto traducido. No incluyas el prompt en la respuesta.`,
       prompt: textToTranslate.toString(),
       temperature: 0.7,
     });
@@ -90,7 +90,7 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "You need to provide your API Key",
+        message: "Necesitas proporcionar tu clave API",
       },
       { status: 401 }
     );

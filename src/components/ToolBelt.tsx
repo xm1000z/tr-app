@@ -24,7 +24,7 @@ export const ToolBelt = () => {
             size={"sm"}
           >
             <TextIcon className="h-4 w-4 mr-2" />
-            Text
+            Texto
           </Button>
         </li>
         <li>
@@ -34,7 +34,7 @@ export const ToolBelt = () => {
             size={"sm"}
           >
             <ImageIcon className="h-4 w-4 mr-2" />
-            Images
+            Imágenes
           </Button>
         </li>
         <li>
@@ -46,7 +46,7 @@ export const ToolBelt = () => {
             size={"sm"}
           >
             <FileIcon className="h-4 w-4 mr-2" />
-            Documents
+            Documentos
           </Button>
         </li>
         <li>
@@ -61,7 +61,7 @@ export const ToolBelt = () => {
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Setup Api Key</p>
+              <p>Configurar Clave API</p>
             </TooltipContent>
           </Tooltip>
         </li>

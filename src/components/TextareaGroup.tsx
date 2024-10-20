@@ -22,7 +22,7 @@ export const TextareaGroup = () => {
       <TranslationBox
         textareaProps={{
           readOnly: isRecording,
-          placeholder: isRecording ? "Speak now" : "Type your text here.",
+          placeholder: isRecording ? "Hablar ahora" : "Escribe aquí.",
           value: textToTranslate,
           onChange: _handleChangeTextToTranslate,
         }}
@@ -32,7 +32,7 @@ export const TextareaGroup = () => {
       <TranslationBox
         textareaProps={{
           readOnly: true,
-          placeholder: "Translated text here.",
+          placeholder: "Texto traducido aquí.",
           value: completion,
         }}
         type={TranslationBoxTypes.TARGET}

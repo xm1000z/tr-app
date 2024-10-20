@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "Invalid request body.",
+        message: "Texto de la solicitud inválido.",
         data: error.format(),
       },
       { status: 400 }
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     const result = await streamText({
       model,
       prompt,
-      system: `Translate the following text from ${fromLanguage} to ${toLanguage}. If "Auto" is the from language, then try to detect the original language automatically after reading the text. Return directly the translated text. Do not include the prompt in the response.`,
+      system: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Si "Auto" es el idioma de origen, intenta detectar automáticamente el idioma original después de leer el texto. Devuelve directamente el texto traducido. No incluyas el mensaje en la respuesta.`,
       temperature: 0.7,
     });
 
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "You need to provide your API Key",
+        message: "Necesitas la API Key",
       },
       { status: 401 }
     );

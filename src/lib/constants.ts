@@ -14,8 +14,8 @@ export const validToolBeltTypes = [
   ToolBeltType.WEB_SITE,
 ];
 
-export const DEFAULT_FROM_QUERY_LANGUAGE = "es";
-export const DEFAULT_TO_QUERY_LANGUAGE = "en";
+export const DEFAULT_FROM_QUERY_LANGUAGE = "en";
+export const DEFAULT_TO_QUERY_LANGUAGE = "es";
 
 interface Language {
   value: string;
@@ -25,7 +25,7 @@ interface Language {
 }
 
 export const languages: Language[] = [
-  { value: "Spanish", label: "Spanish", lang: "es-ES", query: "es" },
+  { value: "Spanish", label: "Español", lang: "es-ES", query: "es" },
   { value: "English", label: "English", lang: "en-US", query: "en" },
   { value: "German", label: "German", lang: "de-DE", query: "de" },
   { value: "Arabic", label: "Arabic", lang: "ar-SA", query: "ar" },
@@ -57,7 +57,7 @@ export const languageByQueryLanguage: Record<string, Language> =
     {}
   );
 
-export const DEFAULT_LANG = "en-US";
+export const DEFAULT_LANG = "es-ES";
 
 export const DEBOUNCE_TIME = 300;
 

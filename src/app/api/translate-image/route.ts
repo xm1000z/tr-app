@@ -3,7 +3,7 @@ import { createOpenAI } from "@ai-sdk/openai";
 import { streamText } from "ai";
 import { base64ToUint8Array } from "@/lib/utils";
 
-// Allow streaming responses up to 30 seconds
+// Permitir respuestas en streaming de hasta 30 segundos
 export const maxDuration = 30;
 
 const RequestSchema = z.object({
@@ -14,7 +14,7 @@ const RequestSchema = z.object({
 });
 
 export async function POST(req: Request) {
-  // Validate the request body
+  // Validar el cuerpo de la solicitud
   const body = await req.json();
 
   const { success: successSchema, data, error } = RequestSchema.safeParse(body);
@@ -23,14 +23,14 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "Invalid request body.",
+        message: "Cuerpo de la solicitud inválido.",
         data: error.format(),
       },
       { status: 400 }
     );
   }
 
-  // Controller for the translation
+  // Controlador para la traducción
   const { fromLanguage, toLanguage, image, apiKey } = data;
 
   const formattedImage = base64ToUint8Array(image);
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
           content: [
             {
               type: "text",
-              text: `Translate the following text from ${fromLanguage} to ${toLanguage}. If "Auto" is the from language, then try to detect the original language automatically after reading the text from the image. If no text is detected in the image, return an empty string. Always return directly the translated text. Do not include the prompt in the response.`,
+              text: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Si el idioma de origen es "Auto", intenta detectar el idioma original automáticamente después de leer el texto de la imagen. Si no se detecta texto en la imagen, devuelve una cadena vacía. Siempre devuelve directamente el texto traducido. No incluyas el prompt en la respuesta.`,
             },
             { type: "image", image: formattedImage },
           ],
@@ -65,7 +65,7 @@ export async function POST(req: Request) {
     return Response.json(
       {
         success: false,
-        message: "You need to provide your API Key",
+        message: "Necesitas proporcionar tu clave API",
       },
       { status: 401 }
     );

@@ -58,7 +58,7 @@ export const TranslationSourceActions: FC<TranslationSourceActionsProps> = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Translate by voice</p>
+              <p>Traducir por voz</p>
             </TooltipContent>
           </Tooltip>
         )}
@@ -71,7 +71,7 @@ export const TranslationSourceActions: FC<TranslationSourceActionsProps> = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>stop voice translation</p>
+              <p>Detener traducción por voz</p>
             </TooltipContent>
           </Tooltip>
         )}
@@ -84,7 +84,7 @@ export const TranslationSourceActions: FC<TranslationSourceActionsProps> = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Stop</p>
+              <p>Detener</p>
             </TooltipContent>
           </Tooltip>
         )}
@@ -102,7 +102,7 @@ export const TranslationSourceActions: FC<TranslationSourceActionsProps> = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Listen</p>
+              <p>Escuchar</p>
             </TooltipContent>
           </Tooltip>
         )}

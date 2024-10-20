@@ -44,13 +44,13 @@ export const TranslationTargetActions: FC<TranslationTargetActionsProps> = ({
     try {
       await navigator.clipboard.writeText(value);
       toast({
-        title: "📋 Translation copied to clipboard",
+        title: "📋 Traducción copiada al portapapeles",
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem copying the text.",
+        title: "¡Ups! Algo salió mal.",
+        description: "Hubo un problema al copiar el texto.",
       });
     }
   };
@@ -59,13 +59,13 @@ export const TranslationTargetActions: FC<TranslationTargetActionsProps> = ({
     try {
       await navigator.clipboard.writeText(window.location.href);
       toast({
-        title: "📋 Link copied to clipboard",
+        title: "📋 Enlace copiado al portapapeles",
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem copying the link.",
+        title: "¡Ups! Algo salió mal.",
+        description: "Hubo un problema al copiar el enlace.",
       });
     }
   };
@@ -89,7 +89,7 @@ export const TranslationTargetActions: FC<TranslationTargetActionsProps> = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Stop</p>
+              <p>Detener</p>
             </TooltipContent>
           </Tooltip>
         )}
@@ -107,7 +107,7 @@ export const TranslationTargetActions: FC<TranslationTargetActionsProps> = ({
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Listen</p>
+              <p>Escuchar</p>
             </TooltipContent>
           </Tooltip>
         )}
@@ -125,7 +125,7 @@ export const TranslationTargetActions: FC<TranslationTargetActionsProps> = ({
             </Button>
           </TooltipTrigger>
           <TooltipContent side="bottom">
-            <p>Copy translation</p>
+            <p>Copiar traducción</p>
           </TooltipContent>
         </Tooltip>
 
@@ -139,11 +139,11 @@ export const TranslationTargetActions: FC<TranslationTargetActionsProps> = ({
               </PopoverTrigger>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>Share translation</p>
+              <p>Compartir traducción</p>
             </TooltipContent>
           </Tooltip>
           <PopoverContent className="flex flex-col gap-2 w-52 p-2">
-            <h4 className="text-center font-bold">Share this translation</h4>
+            <h4 className="text-center font-bold">Compartir traducción</h4>
             <div className="flex items-center justify-center gap-1">
               <a rel="noreferrer" href={`mailto:?body=${value}`}>
                 <Button variant="ghost" size="icon">
