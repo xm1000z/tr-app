@@ -25,13 +25,7 @@ export const Dropzone: FC<DropzoneProps> = ({ title, accept, onDrop }) => {
         })}
       >
         <input {...getInputProps()} />
-        <UploadIcon
-          src={"/drag_and_drop.webp"}
-          loading='lazy'
-          alt="drag and drop"
-          width={150}
-          height={90}
-        />
+        <UploadIcon/>
         <p className="text-center">{title}</p>
       </div>
     </section>
