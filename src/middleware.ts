@@ -1,16 +1,23 @@
+import { authMiddleware } from "@clerk/nextjs";
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-import { authMiddleware } from '@clerk/nextjs/server'
 
-// Función para verificar si la ruta es pública
 function isPublicRoute(path: string) {
-  const publicRoutes = ['/sign-in', '/sign-up', '/api/public'];
+  const publicRoutes = ['/sign-in', '/sign-up'];
   return publicRoutes.some(route => path.startsWith(route));
 }
 
+function isApiRoute(path: string) {
+  const apiRoutes = ['/api/translate', '/api/translate-image', '/api/translate-document'];
+  return apiRoutes.some(route => path.startsWith(route));
+}
+
 export default authMiddleware({
-  publicRoutes: ['/sign-in', '/sign-up', '/api/public'],
+  publicRoutes: ['/sign-in', '/sign-up'],
   afterAuth(auth, req) {
+    if (isApiRoute(req.nextUrl.pathname)) {
+      return NextResponse.next();
+    }
+
     if (!isPublicRoute(req.nextUrl.pathname)) {
       if (!auth.userId) {
         const signInUrl = new URL('https://app.notas.ai/sign-in', req.url);
@@ -22,5 +29,12 @@ export default authMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  matcher: [
+    '/((?!.*\\..*|_next).*)',
+    '/',
+    '/(api|trpc)(.*)',
+    '/api/translate/:path*',
+    '/api/translate-image/:path*',
+    '/api/translate-document/:path*',
+  ],
 };
