@@ -4,6 +4,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from '@clerk/nextjs';
+import { dark } from '@clerk/themes';
 import {
   ThemeProvider,
   TextProvider,
@@ -23,12 +25,12 @@ import { SetupProvider } from "@/providers/setup";
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Translate App",
+  title: "Traductor - NotasAI",
   description:
-    "Translate your text, images, and documents in multiple languages",
+    "Traduce tu texto, imágenes y documentos en múltiples idiomas",
   keywords:
-    "translate, translator, translation, text, image, document, pdf, ai, openai, gpt, chatgpt, vercel, nextjs, tailwindcss, shadcn, radix, react, typescript, bun, pdf-parse",
-  metadataBase: new URL("https://talk-translate.vercel.app"),
+    "traducir, traductor, traducción, texto, imagen, documento, pdf, ai, openai, gpt, chatgpt, vercel, nextjs, tailwindcss, shadcn, radix, react, typescript, bun, pdf-parse",
+  metadataBase: new URL("https://traductor.notas.ai"),
 };
 
 export default function RootLayout({
@@ -37,7 +39,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <ClerkProvider 
+    appearance={{
+        baseTheme: dark,
+        elements: {
+          footer: "hidden",
+        },
+      }}>
+    <html lang="es" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -77,6 +86,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Toaster />
       </body>
-    </html>
+      </html>
+    </ClerkProvider>
   );
 }
