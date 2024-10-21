@@ -14,7 +14,7 @@ export const DocumentGroup = () => {
       <TranslationBox
         textareaProps={{
           readOnly: true,
-          placeholder: "Translated text here.",
+          placeholder: "Texto traducido aquí.",
           value: completion,
         }}
         type={TranslationBoxTypes.TARGET}
