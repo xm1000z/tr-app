@@ -24,7 +24,7 @@ export const ToolBelt = () => {
               disabled:pointer-events-none disabled:opacity-50 
               data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
-              data-[state=inactive]:text-gray-600`}
+              data-[state=inactive]:text-[#878787]`}
           >
             Texto
           </Button>
@@ -39,7 +39,7 @@ export const ToolBelt = () => {
               disabled:pointer-events-none disabled:opacity-50 
               data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
-              data-[state=inactive]:text-gray-600`}
+              data-[state=inactive]:text-[#878787]`}
           >
             Imágenes
           </Button>
@@ -54,7 +54,7 @@ export const ToolBelt = () => {
               disabled:pointer-events-none disabled:opacity-50 
               data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
-              data-[state=inactive]:text-gray-600`}
+              data-[state=inactive]:text-[#878787]`}
           >
             Documentos
           </Button>
