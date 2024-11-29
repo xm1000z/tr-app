@@ -13,7 +13,7 @@ export const ToolBelt = () => {
 
   return (
     <nav className="mb-4">
-      <ul className="flex items-center gap-2">
+      <ul className="flex items-center gap-2 inline-flex items-center justify-center bg-muted text-muted-foreground">
         <li>
           <Button
             onClick={handleChangeToolBeltType(ToolBeltType.TEXT)}
