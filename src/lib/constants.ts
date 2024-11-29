@@ -27,6 +27,7 @@ interface Language {
 export const languages: Language[] = [
   { value: "Español", label: "Español", lang: "es-ES", query: "es" },
   { value: "Inglés", label: "Inglés", lang: "en-US", query: "en" },
+  { value: "Catalán", label: "Catalán", lang: "cat-cat", query: "cat" },
   { value: "Alemán", label: "Alemán", lang: "de-DE", query: "de" },
   { value: "Árabe", label: "Árabe", lang: "ar-SA", query: "ar" },
   { value: "Bengalí", label: "Bengalí", lang: "bn-IN", query: "bn" },

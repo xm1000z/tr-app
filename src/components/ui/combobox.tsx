@@ -50,7 +50,7 @@ export const Combobox: FC<Props> = ({ options, value, onChange }) => {
       </PopoverTrigger>
       <PopoverContent className="w-[200px] md:w-[460px] p-0">
         <Command>
-          <CommandInput placeholder="Search language..." className="h-9" />
+          <CommandInput placeholder="Buscar idioma..." className="h-9" />
           <CommandList>
             <CommandEmpty>No language found.</CommandEmpty>
             <CommandGroup>
