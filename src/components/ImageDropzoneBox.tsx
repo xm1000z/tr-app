@@ -19,7 +19,7 @@ export const ImageDropzoneBox = () => {
   const image = file != null ? URL.createObjectURL(file) : null;
 
   return (
-    <div className="max-h-40 flex items-center justify-center gap-2 w-full relative rounded-md border border-input bg-transparent px-3 py-4 text-sm shadow-sm ">
+    <div className="max-h-40 flex items-center justify-center gap-2 w-full relative  border border-input bg-transparent px-3 py-4 text-sm shadow-sm ">
       {image ? (
         <>
           <Image

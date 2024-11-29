@@ -17,9 +17,9 @@ export const DocumentDropzoneBox = () => {
   };
 
   return (
-    <div className="max-h-40 flex items-center justify-center gap-2 w-full relative rounded-md border border-input bg-transparent px-3 py-4 text-sm shadow-sm">
+    <div className="max-h-40 flex items-center justify-center gap-2 w-full relative  border border-input bg-transparent px-3 py-4 text-sm shadow-sm">
       {file ? (
-        <div className="flex w-full items-center justify-between p-4 rounded-md bg-gray-100 dark:bg-gray-800">
+        <div className="flex w-full items-center justify-between p-4  bg-gray-100 dark:bg-gray-800">
           <div className="flex items-center gap-2">
             <FileIcon className="h-8 w-8" />
 
