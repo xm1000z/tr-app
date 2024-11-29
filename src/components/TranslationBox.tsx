@@ -25,7 +25,7 @@ export const TranslationBox: FC<TranslationBoxProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm">
+    <div className="flex flex-col gap-2 w-full border border-input bg-transparent px-3 py-2 text-sm shadow-sm">
       <div className="flex gap-2 flex-1">
         <Textarea className="min-h-full" {...textareaProps} />
 
