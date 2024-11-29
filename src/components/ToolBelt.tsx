@@ -17,7 +17,7 @@ export const ToolBelt = () => {
         <li>
           <Button
             onClick={handleChangeToolBeltType(ToolBeltType.TEXT)}
-            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-sm transition-colors py-2 px-3 
+            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-xs transition-colors py-2 px-3 
               ${toolBeltType === ToolBeltType.TEXT ? 
                 'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
                 'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
@@ -32,7 +32,7 @@ export const ToolBelt = () => {
         <li>
           <Button
             onClick={handleChangeToolBeltType(ToolBeltType.IMAGE)}
-            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-sm transition-colors py-2 px-3 
+            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-xs transition-colors py-2 px-3 
               ${toolBeltType === ToolBeltType.IMAGE ? 
                 'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
                 'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
@@ -47,7 +47,7 @@ export const ToolBelt = () => {
         <li>
           <Button
             onClick={handleChangeToolBeltType(ToolBeltType.DOCUMENT)}
-            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-sm transition-colors py-2 px-3 
+            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-xs transition-colors py-2 px-3 
               ${toolBeltType === ToolBeltType.DOCUMENT ? 
                 'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
                 'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
