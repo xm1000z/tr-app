@@ -20,7 +20,7 @@ export const ToolBelt = () => {
             className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-sm transition-colors py-2 px-3 
               ${toolBeltType === ToolBeltType.TEXT ? 
                 'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
-                'dark:bg-[#1D1D1D] bg-white text-gray-600'}
+                'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
               disabled:pointer-events-none disabled:opacity-50 
               data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
@@ -35,7 +35,7 @@ export const ToolBelt = () => {
             className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-sm transition-colors py-2 px-3 
               ${toolBeltType === ToolBeltType.IMAGE ? 
                 'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
-                'dark:bg-[#1D1D1D] bg-white text-gray-600'}
+                'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
               disabled:pointer-events-none disabled:opacity-50 
               data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
@@ -50,7 +50,7 @@ export const ToolBelt = () => {
             className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-sm transition-colors py-2 px-3 
               ${toolBeltType === ToolBeltType.DOCUMENT ? 
                 'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
-                'dark:bg-[#1D1D1D] bg-white text-gray-600'}
+                'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
               disabled:pointer-events-none disabled:opacity-50 
               data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
