@@ -35,7 +35,7 @@ export const CodeProvider: FC<PropsWithChildren> = ({ children }) => {
   });
 
   const handleDebouncedCodeChange = useDebouncedCallback((value: string) => {
-    complete(value, { body: { fromLanguage, toLanguage } });
+    complete(value, { body: { fromLanguage, toLanguage, code: value } });
   }, DEBOUNCE_TIME);
 
   const setCodeToTranslate = (value: string) => {
@@ -73,7 +73,7 @@ export const CodeProvider: FC<PropsWithChildren> = ({ children }) => {
       return;
 
     complete(codeToTranslateState, {
-      body: { fromLanguage, toLanguage },
+      body: { fromLanguage, toLanguage, code: codeToTranslateState },
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [complete, fromLanguage, toLanguage]);
