@@ -21,14 +21,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DEFAULT_TOOLTIP_DELAY_DURATION } from "@/lib/constants";
 import { SetupProvider } from "@/providers/setup";
-import { CodeProvider } from "@/providers/code/CodeProvider";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Traductor - NotasAI",
   description:
-    "Traduce tu texto, imágenes y documentos en múltiples idiomas",
+    "Traduce tu texto, código, imágenes y documentos en múltiples idiomas",
   keywords:
     "traducir, traductor, traducción, texto, imagen, documento, pdf, ai, openai, gpt, chatgpt, vercel, nextjs, tailwindcss, shadcn, radix, react, typescript, bun, pdf-parse",
   metadataBase: new URL("https://traductor.notas.ai"),
