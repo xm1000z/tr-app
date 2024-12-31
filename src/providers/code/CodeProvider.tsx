@@ -31,7 +31,7 @@ export const CodeProvider: FC<PropsWithChildren> = ({ children }) => {
   const { fromLanguage, toLanguage } = useContext(languageContext);
 
   const { completion, complete, setCompletion, error } = useCompletion({
-    api: "/api/translateCode",
+    api: "/api/translate-code",
   });
 
   const handleDebouncedCodeChange = useDebouncedCallback((value: string) => {
