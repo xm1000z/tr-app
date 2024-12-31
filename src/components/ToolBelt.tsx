@@ -59,6 +59,21 @@ export const ToolBelt = () => {
             Documentos
           </Button>
         </li>
+        <li>
+          <Button
+            onClick={handleChangeToolBeltType(ToolBeltType.CODE)}
+            className={`inline-flex items-center rounded-none justify-center whitespace-nowrap text-xs transition-colors py-2 px-3 
+              ${toolBeltType === ToolBeltType.CODE ? 
+                'dark:bg-[#2C2C2C] bg-gray-100 text-primary' : 
+                'dark:bg-[#1D1D1D] bg-white text-[#878787]'}
+              disabled:pointer-events-none disabled:opacity-50 
+              data-[state=active]:dark:bg-[#2C2C2C] data-[state=active]:bg-gray-100 
+              data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
+              data-[state=inactive]:text-[#878787]`}
+          >
+            Código
+          </Button>
+        </li>
       </ul>
     </nav>
   );
