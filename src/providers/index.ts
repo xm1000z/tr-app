@@ -4,6 +4,7 @@ export * from "./language";
 export * from "./speechSynthesis";
 export * from "./toolBelt";
 export * from "./image";
+export * from "./code";
 export * from "./speechRecognition";
 export * from "./error";
 export * from "./document";
