@@ -5,6 +5,7 @@ export const enum ToolBeltType {
   IMAGE = "image",
   DOCUMENT = "document",
   WEB_SITE = "web-site",
+  CODE = "code",
 }
 
 export const validToolBeltTypes = [
@@ -12,6 +13,7 @@ export const validToolBeltTypes = [
   ToolBeltType.IMAGE,
   ToolBeltType.DOCUMENT,
   ToolBeltType.WEB_SITE,
+  ToolBeltType.CODE,
 ];
 
 export const DEFAULT_FROM_QUERY_LANGUAGE = "es";
