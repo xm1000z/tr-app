@@ -1,29 +1,39 @@
 "use client";
+import { ChangeEvent, useContext } from "react";
 
-import { useContext } from "react";
 import { codeContext } from "@/providers/code/codeContext";
-import { TranslationBox } from "@/components/TranslationBox";
+import { TranslationBox } from "./TranslationBox";
 import { TranslationBoxTypes } from "@/lib/constants";
 
-const CodeTextareaGroup = () => {
-  const { codeToTranslate, handleChangeCodeToTranslate, completion } = useContext(codeContext);
+export const CodeTextareaGroup = () => {
+  const { completion, codeToTranslate, handleChangeCodeToTranslate } =
+    useContext(codeContext);
+
+  const _handleChangeCodeToTranslate = ({
+    target,
+  }: ChangeEvent<HTMLTextAreaElement>) => {
+    handleChangeCodeToTranslate(target.value);
+  };
 
   return (
-    <div className="flex flex-col md:flex-row gap-6">
+    <div className="mt-4 md:mt-6 flex flex-col md:flex-row md:gap-14">
       <TranslationBox
+        textareaProps={{
+          placeholder: "Introduce el código a traducir",
+          value: codeToTranslate,
+          onChange: _handleChangeCodeToTranslate,
+        }}
         type={TranslationBoxTypes.SOURCE}
-        value={codeToTranslate}
-        onChange={(e) => handleChangeCodeToTranslate(e.target.value)}
-        placeholder="Introduce el código a traducir"
       />
+
       <TranslationBox
+        textareaProps={{
+          readOnly: true,
+          placeholder: "Traducción",
+          value: completion,
+        }}
         type={TranslationBoxTypes.TARGET}
-        value={completion}
-        readOnly
-        placeholder="Traducción"
       />
     </div>
   );
 };
-
-export default CodeTextareaGroup;
