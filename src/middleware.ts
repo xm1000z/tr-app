@@ -7,7 +7,7 @@ function isPublicRoute(path: string) {
 }
 
 function isApiRoute(path: string) {
-  const apiRoutes = ['/api/translate', '/api/translate-image', '/api/translate-document'];
+  const apiRoutes = ['/api/translate', '/api/translate-image', '/api/translate-document', '/api/translate-code'];
   return apiRoutes.some(route => path.startsWith(route));
 }
 
@@ -36,5 +36,6 @@ export const config = {
     '/api/translate/:path*',
     '/api/translate-image/:path*',
     '/api/translate-document/:path*',
+    '/api/translate-code/:path*',
   ],
 };

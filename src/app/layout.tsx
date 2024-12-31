@@ -15,11 +15,13 @@ import {
   SpeechRecognitionProvider,
   ErrorProvider,
   DocumentProvider,
+  CodeProvider,
 } from "@/providers";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DEFAULT_TOOLTIP_DELAY_DURATION } from "@/lib/constants";
 import { SetupProvider } from "@/providers/setup";
+import { CodeProvider } from "@/providers/code/CodeProvider";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -86,16 +88,18 @@ export default function RootLayout({
                   <ToolBeltProvider>
                     <LanguageProvider>
                       <TextProvider>
-                        <ImageProvider>
-                          <DocumentProvider>
-                            <SpeechSynthesisProvider>
-                              <SpeechRecognitionProvider>
-                                {children}
-                                <Analytics />
-                              </SpeechRecognitionProvider>
-                            </SpeechSynthesisProvider>
-                          </DocumentProvider>
-                        </ImageProvider>
+                        <CodeProvider>
+                          <ImageProvider>
+                            <DocumentProvider>
+                              <SpeechSynthesisProvider>
+                                <SpeechRecognitionProvider>
+                                  {children}
+                                  <Analytics />
+                                </SpeechRecognitionProvider>
+                              </SpeechSynthesisProvider>
+                            </DocumentProvider>
+                          </ImageProvider>
+                        </CodeProvider>
                       </TextProvider>
                     </LanguageProvider>
                   </ToolBeltProvider>

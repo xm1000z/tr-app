@@ -70,6 +70,9 @@ export const enum TranslationBoxTypes {
 export const MIN_TEXT_TO_TRANSLATE_LENGTH = 2;
 export const MAX_TEXT_TO_TRANSLATE_LENGTH = 5000;
 
+export const MAX_CODE_TO_TRANSLATE_LENGTH = 10000;
+export const MIN_CODE_TO_TRANSLATE_LENGTH = 10;
+
 export const defaultSpeakingState: SpeakingState = {
   isSpeaking: false,
   type: TranslationBoxTypes.SOURCE,
@@ -82,6 +85,7 @@ export const enum SearchParams {
   TO_LANGUAGE = "tl",
   OPTION = "op",
   TEXT = "text",
+  CODE = "code",
 }
 
 export const validPrefixes = [
