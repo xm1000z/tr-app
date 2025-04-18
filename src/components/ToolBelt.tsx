@@ -71,7 +71,7 @@ export const ToolBelt = () => {
               data-[state=inactive]:dark:bg-[#1D1D1D] data-[state=inactive]:bg-white 
               data-[state=inactive]:text-[#878787]`}
           >
-            Código
+            Código (Beta)
           </Button>
         </li>
       </ul>
