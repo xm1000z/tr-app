@@ -50,7 +50,7 @@ export async function POST(req: Request) {
           content: [
             {
               type: "text",
-              text: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Si el idioma de origen es "Auto", intenta detectar el idioma original automáticamente después de leer el texto de la imagen. Si no se detecta texto en la imagen, devuelve una cadena vacía. Siempre devuelve directamente el texto traducido. No incluyas el prompt en la respuesta.`,
+              text: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Si no se detecta texto en la imagen, devuelve una cadena vacía. Siempre devuelve directamente el texto traducido. No incluyas el prompt en la respuesta.`,
             },
             { type: "image", image: formattedImage },
           ],

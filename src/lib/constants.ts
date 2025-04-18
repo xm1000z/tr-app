@@ -16,7 +16,7 @@ export const validToolBeltTypes = [
   ToolBeltType.CODE,
 ];
 
-export const DEFAULT_FROM_QUERY_LANGUAGE = "auto";
+export const DEFAULT_FROM_QUERY_LANGUAGE = "es";
 export const DEFAULT_TO_QUERY_LANGUAGE = "en";
 
 interface Language {
@@ -27,7 +27,6 @@ interface Language {
 }
 
 export const languages: Language[] = [
-  { value: "Auto", label: "Auto", lang: "auto", query: "auto" },
   { value: "Español", label: "Español", lang: "es-ES", query: "es" },
   { value: "Inglés", label: "Inglés", lang: "en-US", query: "en" },
   { value: "Catalán", label: "Catalán", lang: "cat-cat", query: "cat" },
@@ -63,7 +62,7 @@ export const languageByQueryLanguage: Record<string, Language> =
 
 export const DEFAULT_LANG = "es-ES";
 
-export const DEBOUNCE_TIME = 300;
+export const DEBOUNCE_TIME = 500;
 
 export const enum TranslationBoxTypes {
   SOURCE = "source",

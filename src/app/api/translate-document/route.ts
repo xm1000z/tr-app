@@ -79,7 +79,7 @@ export async function POST(req: Request) {
   try {
     const result = await streamText({
       model,
-      system: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Si el idioma de origen es "Auto", intenta detectar el idioma original automáticamente después de leer el texto. Devuelve directamente el texto traducido. No incluyas el prompt en la respuesta.`,
+      system: `Traduce el siguiente texto de ${fromLanguage} a ${toLanguage}. Devuelve directamente el texto traducido. No incluyas el prompt en la respuesta.`,
       prompt: textToTranslate.toString(),
       temperature: 0.7,
     });
